@@ -143,3 +143,87 @@ console.log(`El nuevo tipo de dato de la disponibilidad es: ${nuevoTipoDisponbil
 console.log('%c5. Agregacion de propiedades de un Objeto (MUTACION)', style_console)
 console.log(`Objeto antes de ser modificado: `)
 console.table(Comprador)
+
+//Agregando propiedades
+Comprador[`Direccion`] = "Calle. Nezahualcoyotl s/n, Col. Los Alpes, Necaxa, Juan Galindo, Puebla, Mexico"
+Comprador[`Tipo`] = "Premium"
+Comprador[`Estatus`] = "Activo"
+Comprador[`TotalCompras`] = 50000.00
+
+console.log(`Objeto modificado: `)
+console.table(Comprador)
+
+console.log('%c6. Eliminacion de propiedades de un Objeto (MUTACION)', style_console)
+console.log(`Objeto antes de ser modificado: `)
+console.table(Pedido)
+//Eliminamos la propiedad de TipoPago de Pedido
+delete Pedido.TipoPago
+
+console.log(`Objeto modificado: `)
+console.table(Pedido)
+
+console.log('%c7. Metodos para controlar la mutabilidad de los Objetos, Congelacion(FREEZE)', style_console)
+//Si deseamos no permitir que los objetos sean modificados ni en estructura, ni en valor, utilizaremos el metodo FREEZE(Congelar)
+console.log("La estructura actual del Objeto COMPRADOR es: ")
+console.table(Comprador)
+Object.freeze(Comprador)
+
+//Intentamos agregar, eliminar o modificar los valores de sus propiedades
+Comprador.FechaUltimaCompra = "04/11/2023"
+Comprador.Direccion = "Calle Venustiano Carranza #16, Col. El Naranjal, Huauchinango, Puebla. Mexico"
+delete Comprador.Nombres
+
+console.log("Verificamos si se realizaron los cambios en el Objeto COMPRADOR: ")
+console.table(Comprador)
+
+console.log('%c8. Metodos para controlar la mutabilidad de los Objetos. Sellado(SEAL)', style_console)
+//Sin embargo, en el caso que desemos poder podificar los valores de las propiedades del Objeto, pero no se su estructura usaremos SEAL
+console.log("Objeto antes de ser modificado: ")
+console.table(Pedido)
+Object.seal(Pedido)
+//Intentamos modificar su estructura
+Pedido[`FechaPédido`] = "04/11/2023 12:43:52"
+delete Pedido[`Cantidad`]
+
+console.log("Verificamos si se realizaron los cambios en el Objeto PEDIDO: ")
+console.table(Pedido)
+// Ahora intentaremos modificar el valor de las propiedades
+Pedido.Cantidad = 5
+console.log("Verificamos si se realizaron los cambios en el Objeto PEDIDO: ")
+console.table(Pedido)
+
+//Desestructuracion de 2 o mas objetos
+console.log('%c9. Desestructuracion de 2 o mas Objetos', style_console)
+
+let {Producto_Precio: productoPrecio, Producto_Marca: productoMarca} = producto
+let {Correo: clienteCorreo, PaisOrigen: clientePais, SaldoActual: clienteSaldo, tipo: clienteTipo} = Comprador
+
+//Transformar valores cuantitativos en cualitativos
+if(productoPrecio > "2000")
+    productoPrecio = "Caro"
+else
+    productoPrecio = "Barato"
+
+if(clienteSaldo > 0)
+    clienteSaldo = "Con Saldo"
+else if(clienteSaldo < 0)
+    clienteSaldo = "Con Deuda"
+else
+    clienteSaldo = "Sin Saldo"
+
+//Transformar valores cualitativos en cuantitativos
+
+let clienteNivel;
+
+if(clienteNivel == "Premium")
+    clienteNivel = 1
+else if(clienteNivel == "Freemium")
+    clienteNivel = 2
+else if(clienteTipo == "No identificado")
+    clienteNivel = 3
+
+//Clasificamos al cliente por su pais de origen
+if(clientePais == "Mexico")
+    clientePais = "Nacional"
+else
+    clientePais = "Extranjero"
