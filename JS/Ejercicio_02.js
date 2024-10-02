@@ -17,6 +17,8 @@ cliente = 1234
 console.log(`El cliente es: ${cliente}`);
 console.log(`El tipo de dato de la variable "cliente" es: ${typeof(cliente)}`);
 
+
+
 // 2. Boolean
 
 console.warn("--- Tipo de dato Boolean (Boleano - true/false) ---")
@@ -52,6 +54,8 @@ else
     else
         console.log("El cliente recibe los servicios gratuitos")
 
+
+
 // 3. Number
 console.warn("--- Tipo de dato Number (Numeros positivos, negativos, decimales, flotantes) ---")
 
@@ -71,6 +75,8 @@ console.log(`Tu nuevo saldo es de: ${saldo_cuenta}`)
 //El cliente raliza un abono de 1500
 monto_transaccion = 1500;
 console.log(`Tu abono de: ${monto_transaccion} ha sido recibido, tu nuevo saldo es de: ${(saldo_cuenta+monto_transaccion)}`)
+
+
 
 // 4. Strings o cadenas de texto
 console.warn("--- Tipo de dato -  STRING(Cadena de caracteres) ---")
@@ -92,6 +98,8 @@ const numero2 = 20
 
 console.log(`La variable "numero" es del tipo ${typeof numero}`)
 console.log(`La variable "numero2" es del tipo ${typeof numero2}`)
+
+
 
 // 5. Big Int
 console.warn("--- Tipo de dato -  BigInt(Enteros de Dimensiones Amplias) - Generalmente utilizado en sistemas matematicos, fisicos o espaciales donde se requiere una excelente precision numerica")
@@ -118,6 +126,8 @@ let numero3 = 200
 
 console.log(`El resultado de la operacion de: numeroGrande4 / numero es = a ${numeroGrande4 / BigInt(numero3)}`)
 //Si intentamos realizar una operacion automatica entre estos 2 tipos de datos, obtendremos un error critico en la operacion
+
+
 
 // 6. Symbol
 console.warn("--- Tipo de dato -  Symbol(Simbolo o forzar la unicidad) ---")
@@ -195,6 +205,8 @@ else
     console.log(`Se han comparado los valores de: Simbolo5 y Simbolo9, negando que tienen el mismo valor`)    
 console.log("------")  
 
+
+
 // 7. Null
 console.warn("--- Tipo de dato -  Null(Nulo o vacio) ---")
 
@@ -244,6 +256,8 @@ console.log("Comparacion de la identidad entre Undefined y Null:");
     console.log("Ambas variables tienen el mismo valor y el mismo tipo de dato") :
     console.log("Las variables tienen el mismo valor, pero no el mismo tipo de dato");
 
+
+    
 // 8. FUNCTION (Funciones)
 console.warn("--- Tipo de dato -  Function (Funciones) ---")
 
