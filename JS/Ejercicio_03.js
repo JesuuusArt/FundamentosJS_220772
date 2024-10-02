@@ -227,3 +227,65 @@ if(clientePais == "Mexico")
     clientePais = "Nacional"
 else
     clientePais = "Extranjero"
+
+// OLE Object Literal Ennhacement
+let datosClientePromociones = {clienteCorreo, clientePais, clienteNivel, clienteSaldo, productoMarca, productoPrecio}
+
+//El nuevo objeto que creamos seria un ejemplo de la informacion que enviariamos al area de Marketing para la difusion de promociones
+console.log("Los datos del cliente y sus habitos de compra son: ")
+console.table(datosClientePromociones)
+
+//Operaciones sobre Objetos
+//Union de Objetos
+console.log('%c10. Union de Objetos usando el metodo de asignacion (ASSING)', style_console)
+console.log("Imprimimos la estructura y valores de un Objeto PRODUCTO")
+console.table(producto)
+
+console.log("Imprimimos la estructura y valores del Objeto PEDIDO")
+console.table(Pedido)
+
+//? Clonamos el objeto producto para poder usar el ejemplo de assing
+let Producto3 = {...producto}
+
+//Suponiendo que el usuario ya realizo el pago, el pedido se convertira en una VENTA que requiere informacion de ambos Objetos
+const venta = Object.assign(Producto3, Pedido) //Esta linea es la que esta uniendolos
+console.log("Consultamos este nuevo Objeto VENTA")
+
+// ! Assing tiene un problema, cuando tiene 2 atributos con el mismo nombre, falla, solo imprime 1 atributo y puedes perder informacion (NO USAR ASSING)
+console.table(venta)
+
+// ? Union de Objetos usando SPREAD OPERATOR para evitar la perdida de informacion con objetos que comparten el mismo nombre en sus propiedades
+console.log('%c11. Union de Objetos usando el SPREAD OPERATOR (...)', style_console)
+
+console.log("Verificamos los Objetos antes de la union")
+console.table(producto)
+console.table(Comprador)
+console.table(Pedido)
+
+let venta2 = {
+    producto: {...producto},
+    comprador: {...Comprador},
+    pedido: {...Pedido}
+}
+console.log("Fusionamos los 3 objetos en uno nuevo, sin perdida de informacion")
+console.table(venta2)
+
+console.log('%c12. Union de Objetos de POST UNION', style_console)
+//Vamos a verificar el estatus de mutalbilidad de los objetos
+console.log("Vamos a verificar el estatus de mutabilidad del objeto PEDIDO")
+console.log(`¿Esta el objeto de Pedido Congelado? : ${Object.isFrozen(Pedido)}`)
+console.log(`¿Esta el objeto de Pedido Sellado? : ${Object.isSealed(Pedido)}`)
+
+console.log("Vamos a verificar el estatus de mutabilidad del objeto COMPRADOR")
+console.log(`¿Esta el objeto de Comprador Congelado? : ${Object.isFrozen(Comprador)}`)
+console.log(`¿Esta el objeto de Comprador Sellado? : ${Object.isSealed(Comprador)}`)
+
+console.log("Vamos a verificar el estatus de mutabilidad del objeto PRODUCTO")
+console.log(`¿Esta el objeto de Producto Congelado? : ${Object.isFrozen(producto)}`)
+console.log(`¿Esta el objeto de Producto Sellado? : ${Object.isSealed(producto)}`)
+
+//Modificamos la estructura del producto, agregando una nueva propiedad
+producto[`isLegacy`] = true
+
+console.table(producto)
+console.table(venta2)
