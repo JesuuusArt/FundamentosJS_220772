@@ -1,0 +1,96 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+/*Estas propiedades definen el tamaño de la fuente de toda la pagina y agregar margenes de tipo caja*/
+body{
+    font-size: 1.6rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(136, 207, 189);
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+header {
+    padding: 3rem 0;
+}
+
+header h1{
+    text-align: center;
+    color: white;
+    font-size: 6rem;
+}
+
+header p{
+    color: rgb(46, 54, 167);
+    text-align: center;
+    font-size: 3.2rem;
+}
+
+header p a{
+    text-decoration: none;
+    color: rgb(153, 95, 95);
+}
+
+.DOM {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.DOM h2 {
+    color: white;
+    text-align: center;
+}
+
+.DOM nav a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.DOM p {
+    color: blue;
+    font-size: 0 auto;
+}
+
+.DOM #formulario {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.DOM #formulario input {
+    display: block;
+    width: 100%;
+    border: none;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.DOM #formulario input[type="submit"] {
+    background-color: blue;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: white;
+}
+
+.alerta {
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.alerta.error {
+    background-color: red;
+}
+
+.alerta.exito {
+    background-color: green;
+}
