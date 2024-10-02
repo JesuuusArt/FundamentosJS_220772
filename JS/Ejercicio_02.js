@@ -216,7 +216,7 @@ Supongamos que el usuario: JesusArt, con correo electronico jesusartiaga.chucho@
 nombreUsuario = "jesusartiaga.chucho@gmail.com"
 passUsuario = "pass123456"
 
-/*En este momento de ejecucuin del sistema no sabemos su genero, ni estatus de relacion sentimental */
+/*En este momento de ejecucion del sistema no sabemos su genero, ni estatus de relacion sentimental */
 
 console.log(`El usuario: ${nombreUsuario} esta intentando loguearse con una contraseña de: ${passUsuario}`)
 
