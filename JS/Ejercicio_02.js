@@ -250,7 +250,7 @@ console.warn("--- Tipo de dato -  Function (Funciones) ---")
 //Declaramos una funcion que nos permita recibir un parametro en este caso el nombre de la persona a saludar, y le enviamos un saludo, esta funcion la asignamos a una constante.
 const saludar = function(nombre){return `Hola ${nombre}!`}
 
-//Invocar la duncion declarada
+//Invocar la funcion declarada
 console.log(saludar(`Jesus`))
 
 //Y que tipo de dato tiene esta constante
