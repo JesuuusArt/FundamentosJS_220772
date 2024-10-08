@@ -1,8 +1,8 @@
 // Repaso de Arreglos
 
 //Estilización de los mensajes de salida
-const bg = "linear-gradient(11deg, rgba(199,0,36,1) 0%, rgba(255,129,26,1) 33%, rgba(255,191,26,1) 86%)";
-const style_console = `background: ${bg}; color: white; border-radius: 6px; padding: 4px; font-size: 1.0rem; font-weight: bold`
+const bg = "linear-gradient(11deg, rgba(0,128,0,1) 0%, rgba(0,255,0,1) 50%, rgba(0,204,102,1) 100%)";
+const style_console = `background: ${bg}; color: white; border-radius: 6px; padding: 4px; font-size: 1.0rem; font-weight: bold`;
 
 //Personalización de las Salidas a Consola
 console.warn("Prácitca 06: Arreglos en Java Script")
@@ -116,4 +116,156 @@ console.log("Y para las  irregulares?")
 //Para saber la dimensión de una matriz irregulas podemos hacer el uso de ciclo
 let numeroFilas= matrizIrregular.length;
 for( let  i=0 ; i<numeroFilas; i++)
-console.log(`La longitud de la fila ${i} es = ${matrizIrregular[i].length}`)
+    console.log(`La longitud de la fila ${i} es = ${matrizIrregular[i].length}`)
+
+
+console.log("%c5.-Agregar un nuevo elemento a un arreglo (PUSH))",  style_console);
+
+let estudiantes = ["Jesus", "Paco", "Tere", "Mauricio", "Joaquin", "Mencho"]
+console.log("Los elementos actuales del arreglo son: ")
+console.table(estudiantes)
+console.log("Agregamos a un nuevo estudiante llamado: Obed")
+estudiantes.push("Obed")
+console.log("Despues de agregar los nuevos elementosdel arreglo son: ")
+console.table(estudiantes)
+
+console.log("¿Que pasa con los arreglos Mixtos?")
+console.log("El arreglo Mixto actualmente tiene los siguientes elementos: ")
+console.table(arregloMixto)
+console.log(`Agregamos la palabra "Hola" como un nuevo elemento`)
+arregloMixto.push("Hola")
+console.log("Y tambien agregamos el numero -51465432134643214654.65498321 siendo este BigInt")
+arregloMixto.push(BigInt(-51465432134643214654.65498321))
+console.log("Despues de agregar estos 2 elementos el arreglo queda asi: ")
+console.table(arregloMixto)
+
+
+console.log("%c6.- Agregar un nuevo elemento a un arreglo (UNSHIFT)", style_console);
+
+console.table(estudiantes)
+console.log("Ahora agregamos a Dulce, al comienza del arreglo.")
+estudiantes.unshift("Dulce")
+console.log("La lista actual es: ")
+console.table(estudiantes)
+
+
+console.log("%c7.- Eliminar elementos de un arreglo en la última posición (POP)", style_console);
+console.log("El arreglo tiene los siguientes elementos: ")
+console.table(estudiantes)
+console.log("Para este caso eliminaremos a Obed en la posición última")
+estudiantes.pop()
+console.log("Despues de eliminar el elemento el arreglo queda de la siguiente manera: ")
+console.table(estudiantes)
+
+
+console.log("%c8.- Eliminar elemento de un arreglo en la primera posición (SHIFT)", style_console);
+console.log("El arreglo tiene los siguientes elementos: ")
+console.table(estudiantes)
+console.log("Para este caso eliminaremos a Dulce que esta en la primer posición")
+estudiantes.shift()
+console.log("Despues de eliminar el elemento el arreglo queda de la siguiente manera: ")
+console.table(estudiantes)
+
+
+console.log("%c9.- Modificar un arreglo en un arreglo nuevo con posiciones definidas (SPLICE)", style_console);
+console.log("El arreglo original tiene los elementos: ")
+console.table(estudiantes)
+console.log("Dividir el arreglo en uno nuevo eliminando ciertos elementos en base a su posición ")
+
+//Cuando la función splice recibe un solo parámetro eliminará los elementos de esa posición en adelante
+estudiantes.splice(2);
+console.table(estudiantes)
+
+//Cuando la función splice recibe dos parámetros, se eliminan todos los elementos que no estes en ese rango
+
+estudiantes.push("Angel")
+estudiantes.push("Say")
+estudiantes.push("Giovant")
+estudiantes.push("Edwin")
+console.log("Se han agregado 5 nuevos estudiantes, por lo que el arreglo es: ")
+console.table(estudiantes)
+console.log("Ahora ya tenemos los elementos suficientes para aplicar el metodo splice con dos parámetros que serán 3,5")
+estudiantes.splice(3,5)
+console.log("Y el nuevo arreglo queda asi: ")
+console.table(estudiantes)
+
+//splice sirve tambien para insertar elementos en posiciones especificos, ahora necesitamos insertar a : "Antonio Ocpaco" entre "Tania Ibarra" y "Edagar Cabrera"
+console.log(`Ahora vamos a insertar a "Jose" en los elementos de la posición 0 y 1`)
+estudiantes.splice(1,0, "Jose")
+console.log("Y el nuevo arreglo queda asi: ")
+console.table(estudiantes)
+
+
+//También splice sirve para reemplazar elementos por otros, en este caso remplazaremos a "Tania Ibarra" por "Brandon Leon"
+
+console.log(`Ahora vamos a remplazar a "Jesus" en los elementos de la posición por "Luis"`)
+estudiantes.splice(0,1, "Luis")
+console.log("Y el nuevo arreglo queda asi: ")
+console.table(estudiantes)
+
+
+console.log("%c10.- Metodos para la manipulacion de Arreglos INMUTABLES", style_console);
+
+let signosZodiacales = ["Aries", "Tauro", "Géminis", "Cáncer", "Leo", "Virgo", "Libra", "Escorpio", "Sagitario", "Capricornio", "Acuario", "Piscis"];
+
+//Congelamos el arreglo volviendolo inmutable
+Object.freeze(signosZodiacales)
+
+//Ninguna se ejecuta porque el objeto esta congelado (INMUTABLE)
+/*signosZodiacales.push("Ofiuco")
+signosZodiacales.unshift()
+signosZodiacales.pop()*/
+
+let [signo1,,signo3,,,,signo7,,,,,] = signosZodiacales
+console.log(`El primer signo zodiacal es: ${signo1}`)
+console.log(`El tercer signo zodiacal es: ${signo3}`)
+console.log(`El septimo signo zodiacal es: ${signo7}`)
+//console.log(`El cuarto signo zodiacal es: ${signo4}`)
+
+
+console.log("%c11.- Filtrado de elemento dentro de un arreglo utilizando el metod FILTER", style_console);
+
+estudiantes.push("Michelle")
+estudiantes.push("Angel")
+estudiantes.push("Say")
+estudiantes.push("Giovant")
+estudiantes.push("Edwin")
+console.table(estudiantes)
+
+Object.freeze(estudiantes)
+
+//Filter es un metodo que recorre los elementos de un arreglo haciendo alguna tarea en especifico, lo que tenemos que considerar es que este nuevo arreglo
+//resultante es un objeto nuevo que puede ser mutable 
+
+console.log("Filtrando los primeros 5 elementos")
+let nuevoEstudiantes = estudiantes.filter((estudiante, index) => index < 5)
+console.table(nuevoEstudiantes)
+console.log("Filtrando los primeros 5 elementos con la nueva funcion")
+console.table(filtraPrimeros5(estudiantes))
+
+//Intentemos modificar el nuevo arreglo que no ha sido congelado
+console.log(`Ahora agregamos "Papoy" al inicio del nuevo arreglo y se ve asi:`)
+nuevoEstudiantes.unshift("Papoy")
+console.table(nuevoEstudiantes)
+
+function filtraPrimeros5(arregloEstudiantes){
+    let listaFiltrada = []
+    for(let i = 0; i < 5; i++){
+        listaFiltrada.push(arregloEstudiantes[i])
+    }
+    return listaFiltrada
+}
+
+
+console.log("%c12.- Filtrado de Elementos de un arreglo utilizando el metodo MAP, en el que necesitemos transformarlos", style_console);
+console.log("Imprimimos los elementos actuales de signosZodiacales: ")
+console.table(signosZodiacales)
+//Que podemos hacer si necesitamos el mismo arreglo pero ahora con todos sus elementos con letras MAYUSCULAS
+console.table(signosZodiacales.map(signoZodiacal => signoZodiacal.toUpperCase()))
+
+//Reduccion de elementos de un arreglo, se usa cuando debemos hacer operaciones matematicas o cuantitativas a un arreglo, como obtener totales, la idea es reducir la lista a un valor mas simplificado
+const costosListaCompras = [15, 52, 50, 16.90, 32, 50, 28, 105, 45.2, 94.10]
+//Como podemos calcular el total de una lista de costos de un carrito de compras
+console.log("Los precios son: ")
+console.table(costosListaCompras)
+console.log(`El total de la compra es: ${costosListaCompras.reduce((total, precio) => total+precio,0).toFixed(2)}`)
