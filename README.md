@@ -13,6 +13,7 @@ Previo a iniciar el Desarrollo de Software para web usando el framework de NodeJ
 |3.|Declaracion de variables (Undefined/Boolean/Number)|10|Finalizada|
 |4.|Declaracion de variables (String/BigInt/Symbol/Null/Function)|6|Finalizada|
 |5.|Introduccion a objetos|19|Finalizada|
+|6.|Arreglos|16|Finalizada|
 
 
 ### Autor
