@@ -353,7 +353,7 @@ for (let i in seriesTrending) {
 }
 
 
-console.log("%c10.- Ciclos interrumpidos para cada uno de los elementos del arreglo (FOR EACH)", style_console)
+console.log("%c11.- Ciclos interrumpidos para cada uno de los elementos del arreglo (FOR EACH)", style_console)
 
 // ? Lista de series de TV trending con temporadas, viewers y reproducciones
 
@@ -383,11 +383,11 @@ seriesTrending2.forEach((serie, index) => {
 // ? Usando filter para filtrar y map para transformar la informacion 
 // ? Lista de series que queremos verificar
 
-let seriesDeseadas = ["The Witcher", "The Boys", "Loki"]
+let seriesDeseadas = ["The Witcher", "Stranger Things", "Breaking Bad"]
 
 // ? Usando map e includes para filtrar y obtener los nombres de series con 3 temporadas
 let seriesConTresTemporadas = seriesTrending2
-.filter(serie => serie.temporadas === 3) // ? Filtramos las series que tienen 3 temporadas
+.filter(serie => serie.temporadas <= 3) // ? Filtramos las series que tienen 3 temporadas
 .map(serie => serie.nombre) // ? Obtenemos solo los nombres de esas series
 .filter(nombre => seriesDeseadas.includes(nombre)) // ? Filtramos las que estan en la lista de series deseadas
 
